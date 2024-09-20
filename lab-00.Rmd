@@ -9,6 +9,7 @@ output: html_document
 
 ```{r load-packages, message=FALSE}
 library(tidyverse) 
+library(ggplot2)
 ```
 
 ### Exercises 16-17
@@ -17,15 +18,15 @@ We set up the data frame. Edit the data below to include information about your 
 
 ```{r setup-tibble}
 team_data <- tibble(
-  name = c("Peter Rabbit", "member 1", "member 2", 
+  name = c("Leo Lin", "Lidia Lomakina", "member 2", 
            "member 3", "member 4"),
-  github_username = c("mcgregors-garden", "username 1", "username 2", 
+  github_username = c("leo-lin1", "deddoroku", "username 2", 
                       "username 3", "username 4"), 
-  colour = c("powderblue", "colour 1", "colour 2", 
+  colour = c("red", "turquoise1", "colour 2", 
              "colour 3", "colour 4"),
-  hobby = c("Hopping", "hobby 1", "hobby 2", 
+  hobby = c("Basketball", "piano", "hobby 2", 
             "hobby 3", "hobby 4"),
-  favourite_number = c(2, NA, NA, NA, NA)
+  favourite_number = c(3, 9, NA, NA, NA)
   )
 
 team_data
@@ -36,7 +37,7 @@ team_data
 We now work on visualising our data. 
 
 ```{r bar-plot}
-p1 <- ggplot(data = team_data, 
+p1 <- ggplot(data = team_data,
              mapping = aes(x = github_username, 
                            y = favourite_number,
                            fill = colour), 
@@ -54,9 +55,9 @@ p1
 Change the text of the plot title and axis labels.
 
 ```{r labelled-bar-plot}
-p1 + labs(x = "Insert text here", 
-          y = "Insert text here",
-          title = "Insert text here")
+p1 + labs(x = "Username", 
+          y = "Favourite Number",
+          title = "Group")
 ```
 
 *Remove this text (including the stars), and add your answer for Exercise 19 here.*
